@@ -1,7 +1,5 @@
 class ComplaintsController < ApplicationController
 
-  before_action :require_admin, only: [:index, :show, :edit]
-
   def index
     @complaints = Complaint.all
   end
