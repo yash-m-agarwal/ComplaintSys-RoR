@@ -1,5 +1,16 @@
 class ComplaintsController < ApplicationController
 
+  before_action :check_login, only: [:index,:show,:edit,:update]
+
+  def check_login
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      redirect_to '/' unless @user.admin?
+    else
+      redirect_to '/login'
+    end
+  end
+
   def index
     @complaints = Complaint.all
   end

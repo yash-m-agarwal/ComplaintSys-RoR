@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   end
 
   def new
+    if session[:user_id]
+      redirect_to '/'
+    end
     @user = User.new
   end
 
