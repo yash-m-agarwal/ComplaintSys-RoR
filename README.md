@@ -1,6 +1,26 @@
 # Introduction
 This application is built for complaint management system. 
 
+#Installation
+
+* Clone the Repo:
+```cassandraql
+    $ git clone "https://github.com/yash-m-agarwal/ComplaintSys-RoR"
+```
+* Change directory into the folder named ComplaintSys-RoR
+
+* Install all the gems
+```cassandraql
+    $ bundle install
+```
+* Make migrations, Seed data into the database and Run the test server
+```cassandraql
+    $ rake db:migrate
+    $ rake db:seed
+    $ rails server
+```
+* The above steps starts the development server on localhost:3000. Go to `http://localhost:3000/` in your browser. It will automatically redirect you to the login page. Accordingly Signup or Login.
+
 # Views Implemented:
 
 * Base Url: `http://localhost:3000` 
