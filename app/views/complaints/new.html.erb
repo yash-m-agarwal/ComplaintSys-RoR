@@ -1,0 +1,9 @@
+<div>
+  <h2>Generate a Complaint</h2>
+  <%= form_for(@complaint) do |f| %>
+    <%= f.text_field :title, :placeholder => 'Title' %>
+    <%= f.text_field :description, :placeholder => 'Description' %>
+    <%= f.text_field :status, :placeholder => 'Status' %>
+    <%= f.submit "Complain", class: "btn-submit" %>
+  <% end %>
+</div>

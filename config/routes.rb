@@ -10,10 +10,13 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
+  get '/complaints/new' => 'complaints#new', as: :new_complaint
+  post '/complaints' => 'complaints#create'
   get '/complaints' => 'complaints#index', as: :all_complaint
   get '/complaints/:id' => 'complaints#show', as: :complaint
   get '/complaints/:id/edit' => 'complaints#edit', as: :edit_complaint
   patch '/complaints/:id' => 'complaints#update'
+  delete '/complaint/:id' => 'complaints#destroy', as: :remove_complaint
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

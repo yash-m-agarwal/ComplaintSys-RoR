@@ -1,5 +1,10 @@
-<% @complaints.each do |c| %>
-  <h2><%= c.title %></h2>
-  <%= c.description %>
-  <%= c.status %>
-<% end %>
+<div>
+  <% @complaints.each do |c| %>
+    <h2><%= c.title %></h2>
+    <p><%= c.description %></p>
+    <%= c.status %><br>
+    <%= link_to "Delete Complaint", remove_complaint_path(c.id), method: "delete" %>
+  <% end %>
+  <br><br>
+  <%= link_to "Complain more", new_complaint_path(@complaint) %>
+</div>

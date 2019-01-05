@@ -8,6 +8,18 @@ class ComplaintsController < ApplicationController
     @complaint = Complaint.find(params[:id])
   end
 
+  def new
+    @complaint = Complaint.new
+  end
+
+  def create
+    @complaint = Complaint.new(new_complaint_params)
+    @complaint.user_id = current_user.id
+    if @complaint.save
+      redirect_to '/'
+    end
+  end
+
   def edit
     @complaint = Complaint.find(params[:id])
   end
@@ -21,8 +33,21 @@ class ComplaintsController < ApplicationController
     end
   end
 
+  def destroy
+    @complaint = Complaint.find(params[:id])
+    if @complaint.delete
+      redirect_to '/'
+    end
+  end
+
   private
     def complaint_params
       params.require(:complaint).permit(:status)
     end
+
+  private
+    def new_complaint_params
+      params.require(:complaint).permit(:title, :description, :status, :user_id)
+    end
+
 end
