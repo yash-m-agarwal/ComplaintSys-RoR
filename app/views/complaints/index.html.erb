@@ -1,0 +1,9 @@
+<div>
+  <% @complaints.each do |complaint| %>
+  <h2><%= complaint.title %></h2>
+    <p><%= complaint.description %></p>
+    <h3><%= complaint.status %></h3>
+    <%= link_to "See More", complaint_path(complaint) %>
+    <br><br>
+  <% end %>
+</div>

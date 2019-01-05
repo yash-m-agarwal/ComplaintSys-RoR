@@ -1,0 +1,9 @@
+<div>
+  <h2><%= @complaint.title %></h2>
+  <p><%= @complaint.description %></p>
+
+  <%=  form_for(@complaint) do |f| %>
+    <%= f.text_field :status, :placeholder => "Status" %>
+    <%= f.submit "Update", class: "btn" %>
+  <% end %>
+</div>

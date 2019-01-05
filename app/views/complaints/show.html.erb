@@ -1,0 +1,8 @@
+<div>
+  <%= link_to "All Complaints", all_complaint_path(@complaints) %>
+  <br>
+  <h2><%= @complaint.title %></h2>
+  <p><%= @complaint.description %></p>
+  <h3><%= @complaint.status %></h3>
+  <%= link_to "Edit", edit_complaint_path(@complaint) %>
+</div>
