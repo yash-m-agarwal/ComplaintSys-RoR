@@ -1,7 +1,7 @@
 # Introduction
 This application is built for complaint management system. 
 
-#Installation
+# Installation
 
 * Clone the Repo:
 ```cassandraql
